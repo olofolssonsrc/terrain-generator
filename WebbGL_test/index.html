@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>		 
+<title>Terräng generation</title>
+<link href="terreng_gen.css" rel="stylesheet" />
+</head>
+<body>
+
+
+<h1 id="header">Terräng generator</h1>
+
+
+<button id="go_btn">Slumpa dina kordinater</button>
+
+
+<div class="terr_container">
+	
+
+<h4>Inställningar för formen på landskapet</h5>	
+<br>
+
+
+<div class="underrubrik">yta och form</div>
+<br>
+
+
+<div class="setting" data-startval="35" data-maxoutput="2.5">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">strävhet</div>
+<div id="" class="value_display">-</div>
+</div>
+
+
+<div class="setting" data-startval="41" data-maxoutput="10">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">kull storlek</div>
+<div id="" class="value_display">-</div>
+</div>
+
+
+<div class="setting" data-startval="79" data-maxoutput="25">
+ <input type="range" min="0" max="100" value="0" class="
+ slider">
+ <div id="setting_namn">lager1</div>
+<div id="" class="value_display">-</div>
+</div>
+
+
+<div class="underrubrik">punktberg</div>
+<br>
+
+<div class="setting" data-startval="60" data-maxoutput="25">
+ <input type="range" min="0" max="100" value="0" class="
+ slider">
+ <div id="setting_namn">storlek</div>
+<div id="" class="value_display">-</div>
+</div>
+
+<div class="setting" data-startval="31" data-maxoutput="1.5">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">altitud potens</div>
+<div id="" class="value_display">-</div>
+</div>
+
+<div class="setting" data-startval="40" data-maxoutput=".07">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">täthet</div>
+<div id="" class="value_display">-</div>
+</div>
+
+
+<div class="underrubrik">bergskedjor</div>
+
+
+
+<div class="setting" data-startval="30" data-maxoutput=".07">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">täthet</div>
+<div id="" class="value_display">-</div>
+</div>
+
+<div class="setting" data-startval="33" data-maxoutput="100">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">storlek</div>
+<div id="" class="value_display">-</div>
+</div>
+
+<div class="setting" data-startval="31" data-maxoutput="30">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">altitud potens</div>
+<div id="" class="value_display">-</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="underrubrik">vatten</div>
+
+<div class="setting" data-startval="57" data-maxoutput="25">
+ <input type="range" min="0" max="100" value="0" class="
+ slider">
+ <div id="setting_namn">vatten nivå</div>
+<div id="" class="value_display">-</div>
+</div>
+
+
+<div class="setting" data-startval="0" data-maxoutput="1.1">
+ <input type="range" min="0" max="100" value="0" class="
+ slider" >
+ <div id="setting_namn">Öutformning</div>
+<div id="" class="value_display">-</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="col_container" id="">
+	
+
+<h4>Inställningar för växtligheten i landskapet</h5>	
+
+<div class="setting" data-startval="50" data-maxoutput="15">
+
+ <input type="range" min="0" max="100" value="0" class="
+ slider">
+
+ <div id="setting_namn">atitudsgräns</div>
+
+<div id="l6md" class="value_display">-</div>
+</div>
+
+</div>
+
+
+<script type="text/javascript" src="processing_monitor.js"></script>
+<script type="text/javascript" src="terreng_gen_UI.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script><script src="noise_library.js"></script><script type="text/javascript" src="terreng_generator.js"></script>
+</body>
+</html>
