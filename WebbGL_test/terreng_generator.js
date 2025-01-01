@@ -63,7 +63,6 @@ var waterMaterial = new THREE.MeshLambertMaterial({
 });
 
 
-//DETTA SKER VID START
 
 var columns = 80;
 var rows = 150;
@@ -78,7 +77,7 @@ var offsetz = Math.random() * 99999;
 
 
 create_terrain();
-//DETTA SKER VID START
+
 function create_terrain() {
 
     terrain = new THREE.Mesh(generate_mesh(), terrain_material);
@@ -90,13 +89,9 @@ function create_terrain() {
     water = new THREE.Mesh(generate_water(), waterMaterial);
     water.position.x = rows * quadSize * -0.5;
     scene.add(water);
-  
-    //createTrees(terrain.geometry.vertices, settinglist[5]);
 
 }
 
-
-//när  man ändrar en setting körs uppdatera terräng
 function update_terrain() {
 
     terrain.geometry = generate_mesh(false);
@@ -105,7 +100,6 @@ function update_terrain() {
     renderer.render(scene, camera);
 }
 
-//när man slumpar kordinater
 function changeCords() {
 
     terrain.geometry = generate_mesh(true);
@@ -116,7 +110,7 @@ function changeCords() {
 
 
 
-function update_settings() { //DENNA FUNKTION TAR INPUT OCH KONVERTERAR TILL DE FAKTISKA FAKTORERNA I KALKULATIONERNA.
+function update_settings() {
 
 
     factorsettinglistan = [];
@@ -152,7 +146,7 @@ function update_settings() { //DENNA FUNKTION TAR INPUT OCH KONVERTERAR TILL DE 
 }
 
 
-function gen_island(waterlevel, heightfactor) { //här skapas en array med värdn för hur mycket varge vertex ska påvärkas av öformatrionen
+function gen_island(waterlevel, heightfactor) {
 
     var valuelist = [];
     update_settings();
@@ -163,8 +157,6 @@ function gen_island(waterlevel, heightfactor) { //här skapas en array med värd
 
             dist = -Math.sqrt(Math.pow(z - (columns * 0.5), 2) + Math.pow(x - (rows * 0.5), 2));
 
-         //   dist = Math.round(dist);
-
             dist += 20;
 
 
@@ -172,7 +164,7 @@ function gen_island(waterlevel, heightfactor) { //här skapas en array med värd
 
         }
 
-    } //denna fiunktion genererar en lista med information om hur högt varge punkt på kartan en vertex är om det är ö struktur.
+    } 
 
     return valuelist;
 }
@@ -195,9 +187,9 @@ function generate_mesh(randomisePos) {
     var geometry = new THREE.Geometry();
 
 
-    var bergnoiseindex = []; //LISTA NED HUR MYCKET BERG FÖR OLIKA VERTEX
+    var bergnoiseindex = []; 
 
-    var islandvalue = 0; //för att hålla koll på vilken i valuelistan för öformation
+    var islandvalue = 0;
 
     for (var z = 0; z <= columns; z++) {
 
@@ -227,7 +219,6 @@ function generate_mesh(randomisePos) {
 
             kedjor = (1 - Math.abs(kedjor));
           
-            //	kedjor = Math.pow(kedjor, 2);
 
 
 
@@ -255,8 +246,6 @@ function generate_mesh(randomisePos) {
 
 
 
-
-            //HÄR GENERERAS NOISEN FÖR BERGOMRÄDEN
 
             var bergnoise = noise.perlin2((x * 0.1) + (offsetx * 5), (z * 0.1) + (offsetz * 5));
             bergnoiseindex.push(bergnoise);
@@ -339,31 +328,10 @@ function calculate_colors(geometry) {
             v2c = new THREE.Color();
             v3c = new THREE.Color();
 
-            var vectorColors = [v0c, v1c, v2c, v3c]; // detta är färgerna för de fyra vektorerna i quaden
+            var vectorColors = [v0c, v1c, v2c, v3c]; 
 
 
-
-
-
-
-
-
-/*
-            for (var i = vectorColors.length - 1; i >= 0; i--) {
-
-
-                     gri = Math.random();
-
-                    if (gri < 1/3) {vectorColors[i] = new THREE.Color(0x445522);}
-                    if (gri > 1/3 && gri < 2/3) {vectorColors[i] = new THREE.Color(0x445522);}
-                    if (gri > 2/3) {vectorColors[i] = new THREE.Color(0x445522);}
-            
-
-            }
-
-*/
-            
-            
+      
             var gri = Math.random();
 
 
@@ -376,13 +344,6 @@ function calculate_colors(geometry) {
             v3v = bergnoiseindex[i + rows + 2];
 
 
-            /*	if(v0.y  < waterlevel + 1 ){v0c = sand;}
-            	if(v1.y    < waterlevel + 1 ){v1c = sand;}
-            	if(v2.y   < waterlevel + 1 ){v2c = sand;}
-            	if(v3.y  < waterlevel + 1 ){v3c = sand;}
-
-            	console.log(waterlevel);
-            	console.log(v0.y);*/
 
 
             function makeGrass(){
@@ -526,24 +487,7 @@ function createTrees(vertices, settinglist) {
 
         if (vertices[i].y > settinglist) {
 
-            /*
 
-             texture = THREE.TextureLoader('gran.png');      
-
-                // create a sphere shape        
-                a = new THREE.BoxGeometry( 10, 10, 10 );
-
-                // give a shape red color
-                man = new THREE.MeshLambertMaterial({color: 0xffffff});   
-
-                // create an object
-                mesh = new THREE.Mesh( a, man );
-
-                mesh.position = new THREE.Vector3(vertices[i].x, vertices[i].y + 10, vertices[i].z );
-
-                scene.add(mesh);
-            	renderer.render(scene, camera);
-              //  vertices[i].position.y  =1000;*/
         }
 
 
